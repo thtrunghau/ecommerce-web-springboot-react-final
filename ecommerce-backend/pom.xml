@@ -37,6 +37,12 @@
         </dependency>
 -->
         <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>java-dotenv</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.stripe</groupId>
             <artifactId>stripe-java</artifactId>
             <version>30.0.0</version>
@@ -124,6 +130,14 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+<!--        <plugin>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            <configuration>-->
+<!--                <finalName>app</finalName>   &lt;!&ndash; always creates target/app.jar &ndash;&gt;-->
+<!--            </configuration>-->
+<!--        </plugin>-->
     </build>
 
 </project>
