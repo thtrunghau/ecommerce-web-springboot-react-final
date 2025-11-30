@@ -3,8 +3,10 @@ package com.ecommerce.project.controllers;
 import com.ecommerce.project.config.AppConstants;
 import com.ecommerce.project.payload.AuthenticationResult;
 import com.ecommerce.project.security.request.LoginRequest;
+import com.ecommerce.project.security.request.SignupRequest;
 import com.ecommerce.project.security.response.MessageResponse;
 import com.ecommerce.project.services.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -121,6 +123,12 @@ public class AuthController {
 //    }
 
 //
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+        return authService.register(signUpRequest);
+    }
+
     @GetMapping("/user")
     public ResponseEntity<?> getUserDetails(Authentication authentication){
         return ResponseEntity.ok().body(authService.getCurrentUserDetails(authentication));
